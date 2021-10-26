@@ -1,0 +1,38 @@
+.container-nota {
+  margin: 20px;
+}
+
+.form-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-notas {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  max-width: 120px;
+  padding: 1rem;
+  background-color: green;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  float: right;
+  cursor: pointer;
+}
+
+.btn-notas:hover {
+  background-color: rgba(0, 128, 0, 0.637);
+  color: white;
+  font-weight: bold;
+}

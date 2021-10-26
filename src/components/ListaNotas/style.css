@@ -1,0 +1,9 @@
+.container-notas ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-notas ul > li {
+  display: flex;
+  flex-direction: column;
+}
