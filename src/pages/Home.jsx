@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
-import InputNotas from '../components/InputNotas';
+import InputNotas from '../components/FormNotas';
 import ListaNotas from '../components/ListaNotas';
 
 const Home = (props) => {
-  const [teste, setTeste] = useState([]);
+  const [notas, setNotas] = useState([]);
 
   function criarNotas(title, text) {
     const novaNota = { title, text };
-    setTeste(novaNota);
+    setNotas([...notas, novaNota]);
   }
+
   return (
     <div>
       <h1>NOTAS</h1>
       <InputNotas criarNotas={criarNotas} />
-      <ListaNotas notas={teste} />
+      <ListaNotas notas={notas} />
     </div>
   );
 };

@@ -1,39 +1,47 @@
 import React, { useState } from 'react';
 import './style.css';
 
-const InputNotas = (props) => {
+const FormNotas = (props) => {
   const [dados, setDados] = useState({
-    title: 'titulo',
-    text: 'texto',
+    title: '',
+    text: '',
   });
 
-  function handleInput(event) {
-    const inputText = event.target.value;
-    setDados({ ...dados, title: inputText });
-  }
-
-  function handleTextArea(event) {
-    const textArea = event.target.value;
-    setDados({ ...dados, text: textArea });
+  function handleChange(event) {
+    const value = event.target.value;
+    const name = event.target.name;
+    setDados({ ...dados, [name]: value });
   }
 
   function handleSubmit(event) {
     event.preventDefault();
+
+    if (!dados.title && !dados.text) {
+      alert('Por favor, insira uma nota');
+      return;
+    }
+
     props.criarNotas(dados.title, dados.text);
+    setDados({ title: '', text: '' });
   }
+
   return (
     <section className="container-nota">
       <form className="form-section" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Insira o titulo da sua nota"
-          onChange={handleInput}
+          name="title"
+          id="title"
+          value={dados.title}
+          onChange={handleChange}
         />
         <br />
         <textarea
-          onChange={handleTextArea}
-          name=""
-          id=""
+          onChange={handleChange}
+          value={dados.text}
+          name="text"
+          id="text"
           cols="30"
           rows="10"
           placeholder="Escreva sua nota aqui.."
@@ -49,4 +57,4 @@ const InputNotas = (props) => {
   );
 };
 
-export default InputNotas;
+export default FormNotas;

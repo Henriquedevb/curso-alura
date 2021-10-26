@@ -3,21 +3,18 @@ import CardNotas from '../CardNotas';
 import './style.css';
 
 const ListaNotas = (props) => {
-  const teste = {};
-  const a = { ...teste, teste: props.notas };
-  const arr = [];
+  console.log(props.notas);
 
-  console.log(arr);
   return (
     <div className="container-notas">
-      {/* <ul>
-        {teste.map((conteudo, index) => (
+      <ul>
+        {props.notas.map((conteudo, index) => (
           <li key={index}>
             <h3>{conteudo.title}</h3>
             <CardNotas>{conteudo.text}</CardNotas>
           </li>
         ))}
-      </ul> */}
+      </ul>
     </div>
   );
 };
